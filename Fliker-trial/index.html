@@ -35,15 +35,11 @@ function flickrWall() {
     let fwall = document.getElementById('fwall');
     fwitems.forEach(function(item) {
       let elem = document.createElement('li');
-      let link = document.createElement('a');
-      link.setAttribute('href', item.link.replace('/in/set-369431',''));
-      link.setAttribute('title', item.title);
-      elem.appendChild(link);
       let image = document.createElement('img');
       image.setAttribute('src', item.media.m.replace('_m.','.'));
       image.setAttribute('alt', ' [Image: ' + item.title + '] ');
       image.setAttribute('loading', 'lazy');
-      link.appendChild(image);
+      elem.appendChild(image);
       fwall.appendChild(elem);
     });
     fwall.appendChild(document.createElement('li'));
